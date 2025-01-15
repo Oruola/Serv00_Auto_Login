@@ -24,7 +24,12 @@ jobs:
   
       - name: Install dependencies  
         run: npm install puppeteer  
-  
+
+      - name: Install Chromium dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libatk-bridge2.0-0 libx11-xcb1 libxcomposite1 libxrandr2 libgbm-dev libgtk-3-0
+
       - name: Create accounts.json  
         run: echo "$ACCOUNTS_JSON" > accounts.json  
   
